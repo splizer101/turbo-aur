@@ -36,6 +36,7 @@ resolve_user_home() {
 
 # Use it:
 resolve_user_home
+USER_GROUP="$(id -gn "$USER_NAME" 2>/dev/null || echo "$USER_NAME")"
 ROOT_DIR="${USER_HOME}/turbo"
 CACHE_DIR="${ROOT_DIR}/cache"
 TEMP_DIR="${CACHE_DIR}/temp"
@@ -64,6 +65,11 @@ EOF
   echo "Created default conf at ${CONF_FILE}"
 else
   echo "Conf already exists at ${CONF_FILE}"
+fi
+if command -v sudo >/dev/null 2>&1; then
+  sudo chown -R "${USER_NAME}:${USER_GROUP}" "${ROOT_DIR}"
+else
+  chown -R "${USER_NAME}:${USER_GROUP}" "${ROOT_DIR}"
 fi
 
 echo "Ensured directories: ${TEMP_DIR}"
