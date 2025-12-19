@@ -12,13 +12,13 @@ NOTE: Turbo is currently in beta, it is already very capable, but there may be u
 
 For the main branch (recommended) please follow the instructions below:
 ```bash
-git clone https://github.com/splizer101/turbo.git
+git clone https://github.com/splizer101/turbo-aur.git
 cd turbo
 makepkg -si
 ```
 If you would like to install from the turbo testing repository please follow the instructions below:
 ```bash
-git clone https://github.com/splizer101/turbo.git#testing
+git clone https://github.com/splizer101/turbo-aur.git#testing
 cd turbo
 makepkg -p PKGBUILD.testing -si
 ```
