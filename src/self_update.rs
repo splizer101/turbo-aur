@@ -14,8 +14,8 @@ use crate::config::Config;
 use crate::pac;
 use crate::style::*;
 
-const REPO_URL: &str = "https://github.com/splizer101/turbo.git";
-const RELEASES_API: &str = "https://api.github.com/repos/splizer101/turbo/releases/latest";
+const REPO_URL: &str = "https://github.com/splizer101/turbo-aur.git";
+const RELEASES_API: &str = "https://api.github.com/repos/splizer101/turbo-aur/releases/latest";
 const DEFAULT_BRANCH: &str = "main";
 
 #[derive(Debug, Deserialize)]
